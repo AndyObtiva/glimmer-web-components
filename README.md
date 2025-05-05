@@ -15,7 +15,7 @@ gem install glimmer-web-components
 
 ### Multi Checkbox Dropdown:
 
-![multi checkbox dropdown](/screenshots/glimmer-web-components-multi-checkbox-dropdown.png)
+![multi checkbox dropdown](/screenshots/glimmer-web-components-multi-checkbox-dropdown.gif)
 
 Add the following at the top:
 
