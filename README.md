@@ -23,7 +23,46 @@ Add the following at the top:
 require 'glimmer/web/component/multi_checkbox_dropdown'
 ```
 
-Then use the `multi_checkbox_dropdown` Glimmer Web Component in standard Glimmer HTML DSL code:
+Then use the `multi_checkbox_dropdown` Glimmer Web Component in standard Glimmer HTML DSL code.
+
+Simple version:
+
+```ruby
+  ...
+  markup {
+    div {
+      ...
+      multi_checkbox_dropdown(values: SomePresenter::STATUS_FILTER_TYPES) {
+        selected_values <=> [@some_presenter, :status_filters]
+      }
+      ...
+    }
+  }
+  ...
+```
+
+Here is the list of defined `multi_checkbox_dropdown` component options for customization when needed:
+
+```ruby
+        option :values, default: []
+        option :display_values
+        option :selected_values, default: []
+        option :locale, default: :en
+        option :translations, default: {}
+        option :selected_values_formatter, default: SELECTED_VALUES_FORMATTER_DEFAULT
+        option :width, default: 175
+        option :height, default: 40
+        option :margin, default: '0 15px 0 0'
+        option :text_align, default: :center
+        option :content_z_index, default: '1000'
+        option :content_label_padding_px, default: 10
+        option :content_background, default: :white
+        option :content_checkbox_size, default: 20
+        option :content_checkbox_option_hover_color, default: 'rgb(245, 245, 245)'
+        option :content_label_font_size, default: 1.rem
+```
+
+Here is a customized version of consuming the `multi_checkbox_dropdown` Glimmer Web Component:
 
 ```ruby
   ...
@@ -32,12 +71,13 @@ Then use the `multi_checkbox_dropdown` Glimmer Web Component in standard Glimmer
       ...
       multi_checkbox_dropdown(
         values: SomePresenter::STATUS_FILTER_TYPES,
-        display_values: SomePresenter::STATUS_FILTER_TYPES.map { |value| I18n.t("status.#{value}") },
+        display_values: SomePresenter::STATUS_FILTER_TYPES.map(&:capitalize),
         locale: I18n.locale,
         width: 190,
         translations: {
-          en: {select: I18n.t('form.status_filter', locale: :en)},
-          es: {select: I18n.t('form.status_filter', locale: :es)},
+          en: {select: I18n.t('form.filter_by_status')},
+          fr: {select: I18n.t('form.filter_by_status')},
+          es: {select: I18n.t('form.filter_by_status')},
         },
       ) {
         selected_values <=> [@some_presenter, :status_filters]
