@@ -43,7 +43,7 @@ Simple version with `on_change` listener:
   ...
 ```
 
-Simpler (recommended) version with bidirectional data-binding (selected_values are automatically prepopulated from @some_presenter.status_filters and stored back on @some_presenter.status_filters upon user selection):
+Simpler **(recommended)** version with bidirectional data-binding (`selected_values` are automatically prepopulated from `@some_presenter.status_filters` and stored back on `@some_presenter.status_filters` upon user selection):
 
 ```ruby
   ...
