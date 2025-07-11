@@ -93,9 +93,9 @@ Here is a customized version of consuming the `multi_checkbox_dropdown` Glimmer 
         locale: I18n.locale,
         width: 190,
         translations: {
-          en: {select: I18n.t('form.filter_by_status')},
-          fr: {select: I18n.t('form.filter_by_status')},
-          es: {select: I18n.t('form.filter_by_status')},
+          en: {select: 'Filter by Status',
+          fr: {select: 'Filtrer par statut'},
+          es: {select: 'Filtrar por estado'},
         },
       ) {
         selected_values <=> [@some_presenter, :status_filters]
