@@ -25,7 +25,25 @@ require 'glimmer/web/component/multi_checkbox_dropdown'
 
 Then use the `multi_checkbox_dropdown` Glimmer Web Component in standard Glimmer HTML DSL code.
 
-Simple version:
+Simple version with `on_change` listener:
+
+```ruby
+  ...
+  markup {
+    div {
+      ...
+      multi_checkbox_dropdown(values: SomePresenter::STATUS_FILTER_TYPES) {
+        on_change do |selected_values|
+          # Do something with selected values
+        end
+      }
+      ...
+    }
+  }
+  ...
+```
+
+Simpler (recommended) version with bidirectional data-binding (selected_values are automatically prepopulated from @some_presenter.status_filters and stored back on @some_presenter.status_filters upon user selection):
 
 ```ruby
   ...
