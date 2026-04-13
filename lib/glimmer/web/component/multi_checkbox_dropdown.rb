@@ -49,7 +49,7 @@ module Glimmer
         option :selected_values_formatter, default: SELECTED_VALUES_FORMATTER_DEFAULT
         option :width, default: 175
         option :height, default: 40
-        option :margin, default: '0 15px 0 0'
+        option :margin, default: 0
         option :text_align, default: :center
         option :content_z_index, default: '1000'
         option :content_label_padding_px, default: 10
@@ -149,7 +149,7 @@ module Glimmer
         end
         
         def multi_checkbox_content
-          @multi_checkbox_content = div(style: {position: :absolute, z_index: content_z_index, width:, background: content_background, box_shadow: '0 6px 12px rgba(0, 0, 0, 0.175)'}) {
+          @multi_checkbox_content = div(style: {position: :absolute, top: height, left: 0, z_index: content_z_index, width:, background: content_background, box_shadow: '0 6px 12px rgba(0, 0, 0, 0.175)'}) {
             class_name(CSS_CLASS_CONTENT_HIDDEN) <= [self, :display_content, on_read: :!]
             
             content(self, :selected_values) { # re-renders automatically upon change to self.selected_values
