@@ -7,8 +7,14 @@ This is a collection of reusable Glimmer Web Components for Glimmer DSL for Web,
 
 ## Setup
 
+Add to bundler `Gemfile` in your Rails web app:
+```ruby
+gem 'glimmer-web-components', '0.1.0'
 ```
-gem install glimmer-web-components
+
+Also, add to `config/initializers/assets.rb`:
+```ruby
+Opal.use_gem 'glimmer-web-components'
 ```
 
 ## Usage
