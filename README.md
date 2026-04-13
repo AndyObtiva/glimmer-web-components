@@ -9,7 +9,7 @@ This is a collection of reusable Glimmer Web Components for Glimmer DSL for Web,
 
 Add to bundler `Gemfile` in your Rails web app:
 ```ruby
-gem 'glimmer-web-components', '0.1.0'
+gem 'glimmer-web-components', '0.1.1'
 ```
 
 Also, add to `config/initializers/assets.rb`:
@@ -148,7 +148,7 @@ These features have been suggested. You might see them in a future version of Gl
 
 [MIT](https://opensource.org/licenses/MIT)
 
-Copyright (c) 2025 - Andy Maleh.
+Copyright (c) 2025-2026 - Andy Maleh.
 See [LICENSE.txt](LICENSE.txt) for further details.
 
 --

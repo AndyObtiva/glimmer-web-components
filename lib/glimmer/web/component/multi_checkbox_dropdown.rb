@@ -213,7 +213,7 @@ module Glimmer
           is_value_selected = selected_values.include?(value)
           li_class = is_value_selected ? :selected : ''
           
-          li(class: li_class) {
+          li(class: li_class, style: {clear: 'both'}) {
             input_id = "#{MultiCheckboxDropdown.component_element_class}-#{object_id}-input-#{value}"
             
             input(type: 'checkbox', id: input_id, value: is_value_selected,
